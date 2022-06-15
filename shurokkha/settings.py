@@ -10,7 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import django_heroku
-# django_heroku.settings(locals())
+import dj_database_url
+
 
 
 from pathlib import Path
@@ -125,6 +126,8 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = Path(BASE_DIR, 'staticfiles')
+
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
